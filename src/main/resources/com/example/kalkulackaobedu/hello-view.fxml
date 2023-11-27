@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulackaobedu.HelloController">
+    <BorderPane prefHeight="606.0" prefWidth="800.0">
+        <bottom>
+            <ToolBar prefHeight="60.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                <TextField fx:id="nameField" prefHeight="25.0" prefWidth="499.0" promptText="Jméno" />
+                <TextField fx:id="costField" promptText="Cena" />
+                <Button fx:id="addButton" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#AddRecord" prefHeight="25.0" prefWidth="128.0" text="Přidat" />
+            </ToolBar>
+        </bottom>
+      <top>
+          <VBox prefHeight="546.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+              <MenuBar>
+                  <Menu mnemonicParsing="false" text="File">
+                      <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#CloseApp" text="Close" />
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                      <MenuItem fx:id="removeDatabaseButton" mnemonicParsing="false" onAction="#DeleteAllRecords" text="Delete Database" />
+                  <MenuItem fx:id="servicePayment" mnemonicParsing="false" onAction="#AddServiceCost" text="Přidej Servisní poplatek" />
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                      <MenuItem mnemonicParsing="false" text="About" />
+                  </Menu>
+              </MenuBar>
+              <ScrollPane hmax="0.0" prefHeight="554.0" prefWidth="800.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="798.0">
+                      <VBox fx:id="ListOfRecords" layoutY="-1.0" prefHeight="795.0" prefWidth="800.0" />
+                  </AnchorPane>
+              </ScrollPane>
+          </VBox>
+      </top>
+    </BorderPane>
+</AnchorPane>
