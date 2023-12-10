@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="50.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulackaobedu.ServiceFee">
+    <ToolBar layoutY="4.0" prefHeight="48.0" prefWidth="200.0">
+        <TextField fx:id="serviceFeeField" prefHeight="25.0" prefWidth="112.0" />
+        <Button fx:id="addFeeToAllButton" mnemonicParsing="false" onAction="#addFeeToAll" text="Add To All" />
+    </ToolBar>
+</AnchorPane>

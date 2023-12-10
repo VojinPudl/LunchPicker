@@ -1,21 +1,26 @@
 package com.example.kalkulackaobedu;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Objects;
 
 public class HelloController {
 
 
-
     public TextField nameField;
     public TextField costField;
     public Button addButton;
-    public HashMap<String,Integer> database;
+    public HashMap<String, Integer> database = new HashMap<>();
     public TextArea DatabaseOutput;
 
 
@@ -34,16 +39,16 @@ public class HelloController {
         costField = new TextField();
         addButton = new Button();
         DatabaseOutput = new TextArea();
-        database = new HashMap<>();
     }
 
     public void AddRecord() {
-        if (!Objects.equals(nameField.getText(), "")){
-            if (Objects.equals(costField.getText(), "")){
-                database.put(nameField.getText(),0);
+        if (!Objects.equals(nameField.getText(), "")) {
+            if (Objects.equals(costField.getText(), "")) {
+                database.put(nameField.getText(), 0);
             } else {
-                if (database.containsKey(nameField.getText())){
-                    database.replace(nameField.getText(),Integer.parseInt(costField.getText()) + database.get(nameField.getText()));
+                if (database.containsKey(nameField.getText())) {
+                    database.replace(nameField.getText(), Integer.parseInt(costField.getText())
+                            + database.get(nameField.getText()));
                 } else {
                     database.put(nameField.getText(), Integer.parseInt(costField.getText()));
                 }
@@ -52,23 +57,36 @@ public class HelloController {
         RefreshDB();
     }
 
-    public void MakeRecord(String name, String money){
+    public ToolBar MakeDate() {
+        ToolBar toolBar = new ToolBar();
+        Label label = new Label();
+        label.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+        toolBar.getItems().add(toolBar);
+        return toolBar;
+    }
+
+    public void MakeRecord(String name, String money) {
         Record = new ToolBar();
         RecordContent = new Label();
         RecordContent.setText(name + " dluží " + money + " Kč");
         AddMoneyField = new TextField();
         Button deleteRecord = new Button();
+        deleteRecord.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DeleteRecord();
+            }
+        });
         deleteRecord.setText("x");
         Record.getItems().addAll(RecordContent, AddMoneyField, deleteRecord);
         ListOfRecords.getChildren().add(Record);
     }
 
-    public void DeleteRecord(){
-        //database.remove(this.Record.getItems());
+    public void DeleteRecord() {
         RefreshDB();
     }
 
-    public void RefreshDB(){
+    public void RefreshDB() {
         ListOfRecords.getChildren().clear();
         for (int i = 0; i < database.size(); i++) {
             MakeRecord(database.keySet().toArray()[i].toString(), database.values().toArray()[i].toString());
@@ -84,9 +102,15 @@ public class HelloController {
         System.exit(0);
     }
 
-    public void AddServiceCost(ActionEvent actionEvent) {
+    public void AddServiceCost(ActionEvent actionEvent) throws IOException {
+        ServiceFee serviceFee = new ServiceFee(database);
         Stage stage = new Stage();
-        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Service-fee.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 200, 50);
+        stage.setTitle("Kalkulačka");
+        stage.setScene(scene);
         stage.setResizable(false);
+        stage.setAlwaysOnTop(true);
+        stage.showAndWait();
     }
 }
