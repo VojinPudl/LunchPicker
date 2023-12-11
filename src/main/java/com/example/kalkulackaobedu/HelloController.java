@@ -107,7 +107,8 @@ public class HelloController {
 
     public void AddServiceCost(ActionEvent actionEvent) throws IOException {
         ServiceFee serviceFee = new ServiceFee();
-        serviceFee.databaseRef = database;
+        serviceFee.setDatabaseRef(database);
         serviceFee.ShowScene();
+        RefreshDB();
     }
 }

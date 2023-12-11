@@ -14,12 +14,20 @@ public class ServiceFee {
     public TextField serviceFeeField;
     public Button addFeeToAllButton;
 
-    public HashMap<String,Integer> databaseRef;
+    public static HashMap<String,Integer> databaseRef;
 
     public ServiceFee() {
         serviceFeeField = new TextField();
         addFeeToAllButton = new Button();
 
+    }
+
+    public void setDatabaseRef(HashMap<String, Integer> databaseRef) {
+        ServiceFee.databaseRef = databaseRef;
+    }
+
+    public HashMap<String, Integer> getDatabaseRef() {
+        return databaseRef;
     }
 
     public void ShowScene() throws IOException {
@@ -34,8 +42,12 @@ public class ServiceFee {
     }
 
     public void addFeeToAll(ActionEvent actionEvent) {
-        for (int i = 0; i < databaseRef.size(); i++) {
-            databaseRef.replace((String) databaseRef.keySet().toArray()[i], (Integer) databaseRef.values().toArray()[i]);
+        if (getDatabaseRef().isEmpty())
+            return;
+        for (int i = 0; i < getDatabaseRef().size(); i++) {
+            getDatabaseRef().replace((String) getDatabaseRef().keySet().toArray()[i],
+                    (Integer) getDatabaseRef().values().toArray()[i]
+                            + Integer.parseInt(serviceFeeField.getText()));
         }
     }
 }
