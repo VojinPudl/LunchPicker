@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,8 +17,6 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class HelloController {
-
-
     public TextField nameField;
     public TextField costField;
     public Button addButton;
@@ -50,21 +50,14 @@ public class HelloController {
                     database.replace(nameField.getText(), Integer.parseInt(costField.getText())
                             + database.get(nameField.getText()));
                 } else {
-                    database.put(nameField.getText(), Integer.parseInt(costField.getText()));
+                    ArithmeticOperation arithmeticOperation = new ArithmeticOperation(costField.getText());
+                    //database.put(nameField.getText(), Integer.parseInt(costField.getText()));
+                    database.put(nameField.getText(), arithmeticOperation.getNum());
                 }
             }
         }
         RefreshDB();
     }
-
-    public ToolBar MakeDate() {
-        ToolBar toolBar = new ToolBar();
-        Label label = new Label();
-        label.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-        toolBar.getItems().add(toolBar);
-        return toolBar;
-    }
-
     public void MakeRecord(String name, String money) {
         Record = new ToolBar();
         RecordContent = new Label();
@@ -93,12 +86,25 @@ public class HelloController {
         }
     }
 
+
+    public void WriteDBtoFIle() throws IOException {
+        File file = new File(".",
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + ".txt");
+        FileWriter fileWriter = new FileWriter(file);
+        for (int i = 0; i < database.size(); i++) {
+            fileWriter.write(database.keySet().toArray()[i].toString() + "|"
+                    + database.values().toArray()[i].toString() + "\n");
+        }
+        fileWriter.close();
+    }
+
     public void DeleteAllRecords(ActionEvent actionEvent) {
         database = new HashMap<>();
         RefreshDB();
     }
 
-    public void CloseApp(ActionEvent actionEvent) {
+    public void CloseApp(ActionEvent actionEvent) throws IOException {
+        WriteDBtoFIle();
         System.exit(0);
     }
 
