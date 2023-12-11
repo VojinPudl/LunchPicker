@@ -2,11 +2,8 @@ package com.example.kalkulackaobedu;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -109,14 +106,8 @@ public class HelloController {
     }
 
     public void AddServiceCost(ActionEvent actionEvent) throws IOException {
-        ServiceFee serviceFee = new ServiceFee(database);
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Service-fee.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 200, 50);
-        stage.setTitle("Kalkulačka");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setAlwaysOnTop(true);
-        stage.showAndWait();
+        ServiceFee serviceFee = new ServiceFee();
+        serviceFee.databaseRef = database;
+        serviceFee.ShowScene();
     }
 }
