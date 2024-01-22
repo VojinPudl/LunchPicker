@@ -1,6 +1,5 @@
 package com.example.kalkulackaobedu;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,8 +12,9 @@ import java.util.HashMap;
 public class ServiceFee {
     public TextField serviceFeeField;
     public Button addFeeToAllButton;
+    public static Stage stage;
 
-    public static HashMap<String,Integer> databaseRef;
+    public static HashMap<String, Integer> databaseRef;
 
     public ServiceFee() {
         serviceFeeField = new TextField();
@@ -31,7 +31,7 @@ public class ServiceFee {
     }
 
     public void ShowScene() throws IOException {
-        Stage stage = new Stage();
+        stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Service-fee.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 200, 50);
         stage.setTitle("Kalkulačka");
@@ -41,13 +41,15 @@ public class ServiceFee {
         stage.showAndWait();
     }
 
-    public void addFeeToAll(ActionEvent actionEvent) {
+    public void addFeeToAll() {
         if (getDatabaseRef().isEmpty())
             return;
         for (int i = 0; i < getDatabaseRef().size(); i++) {
             getDatabaseRef().replace((String) getDatabaseRef().keySet().toArray()[i],
-                    (Integer) getDatabaseRef().values().toArray()[i]
-                            + Integer.parseInt(serviceFeeField.getText()));
+                    (int) ((Integer) getDatabaseRef().values().toArray()[i]
+                            + Math.floor((double) Integer.parseInt(serviceFeeField.getText())
+                            / getDatabaseRef().size())));
         }
+        stage.close();
     }
 }
