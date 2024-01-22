@@ -23,6 +23,7 @@
                   <Menu mnemonicParsing="false" text="Edit">
                       <MenuItem fx:id="removeDatabaseButton" mnemonicParsing="false" onAction="#DeleteAllRecords" text="Delete Database" />
                   <MenuItem fx:id="servicePayment" mnemonicParsing="false" onAction="#AddServiceCost" text="Přidej Servisní poplatek" />
+                  <MenuItem fx:id="calcButton" mnemonicParsing="false" onAction="#OpenCalc" text="Kalkulačka"/>
                   </Menu>
               </MenuBar>
               <ScrollPane hmax="0.0" prefHeight="554.0" prefWidth="800.0">

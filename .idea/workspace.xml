@@ -8,13 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5f2545d-1b0b-466e-8fff-98f8dfe3c588" name="Changes" comment="New Things.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Close_Sure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/Close-Sure.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/dark-mode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Calc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/calc.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Close_Sure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Close_Sure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ServiceFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ServiceFee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/Service-fee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/Service-fee.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/Close-Sure.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/Close-Sure.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -51,7 +53,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master-&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/sarik/IdeaProjects/KalkulackaObedu/src/main/java/com/example/kalkulackaobedu&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sarik/IdeaProjects/KalkulackaObedu/src/main/resources/com/example/kalkulackaobedu&quot;,

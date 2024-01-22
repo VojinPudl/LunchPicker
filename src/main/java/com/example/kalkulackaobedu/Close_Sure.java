@@ -15,5 +15,7 @@ public class Close_Sure {
     }
 
     public void DontCloseWindowAction() {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
     }
 }

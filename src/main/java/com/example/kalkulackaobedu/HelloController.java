@@ -1,5 +1,6 @@
 package com.example.kalkulackaobedu;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -8,6 +9,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -35,6 +37,7 @@ public class HelloController {
     public MenuItem servicePayment;
     public MenuItem loadDBbutton;
     public MenuItem saveDBbutton;
+    public MenuItem calcButton;
 
     public HelloController() {
         nameField = new TextField();
@@ -110,6 +113,7 @@ public class HelloController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Close-Sure.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 200, 100);
         stage.setTitle("Kalkulačka");
+        stage.initStyle(StageStyle.UTILITY);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setAlwaysOnTop(true);
@@ -157,5 +161,17 @@ public class HelloController {
 
     public void saveDB() throws IOException {
         WriteDBtoFIle();
+    }
+
+    public void OpenCalc(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("calc.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 300, 120);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setTitle("Kalkulačka");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setAlwaysOnTop(true);
+        stage.showAndWait();
     }
 }

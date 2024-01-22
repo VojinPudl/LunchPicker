@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ public class ServiceFee {
         stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Service-fee.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 200, 50);
+        stage.initStyle(StageStyle.UTILITY);
         stage.setTitle("Kalkulačka");
         stage.setScene(scene);
         stage.setResizable(false);

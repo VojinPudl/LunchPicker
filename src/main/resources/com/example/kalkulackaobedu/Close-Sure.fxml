@@ -8,8 +8,8 @@
     <VBox prefHeight="100.0" prefWidth="200.0">
       <Label prefHeight="60.0" prefWidth="200.0" text="Opravdu si přeješ odejít.Tvoje databáze obsahuje data.Nechceš si je první uložit." textAlignment="CENTER" wrapText="true" />
         <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="200.0">
-            <Button fx:id="closeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="25.0" prefWidth="60.0" text="Ano" textAlignment="JUSTIFY" />
-            <Button fx:id="DontCloseWindow" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="24.0" mnemonicParsing="false" onAction="#DontCloseWindowAction" prefHeight="25.0" prefWidth="60.0" text="Ne" textAlignment="RIGHT" />
+            <Button fx:id="closeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="26.0" prefWidth="90.0" text="Ano" textAlignment="JUSTIFY" />
+            <Button fx:id="DontCloseWindow" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="24.0" mnemonicParsing="false" onAction="#DontCloseWindowAction" prefHeight="25.0" prefWidth="90.0" text="Ne" textAlignment="RIGHT" />
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
