@@ -1,6 +1,5 @@
 package com.example.kalkulackaobedu;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -38,6 +37,9 @@ public class HelloController {
     public MenuItem loadDBbutton;
     public MenuItem saveDBbutton;
     public MenuItem calcButton;
+    public Tab DatabaseFull;
+    public Tab TodayDB;
+    public VBox fullDB;
 
     public HelloController() {
         nameField = new TextField();
@@ -91,13 +93,19 @@ public class HelloController {
         }
     }
 
+    public void WriteAll(){
+        for (int i = 0; i < database.size(); i++) {
+            MakeRecord(database.keySet().toArray()[i].toString(), database.values().toArray()[i].toString());
+        }
+    }
+
 
     public void WriteDBtoFIle() throws IOException {
         File file = new File(".",
                 LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + ".bin");
         FileWriter fileWriter = new FileWriter(file);
         for (int i = 0; i < database.size(); i++) {
-            fileWriter.write(database.keySet().toArray()[i].toString() + "-"
+            fileWriter.write(database.keySet().toArray()[i].toString() + "|"
                     + database.values().toArray()[i].toString() + "\n");
         }
         fileWriter.close();
@@ -147,7 +155,7 @@ public class HelloController {
                 String line;
                 ArrayList<String[]> arrayList = new ArrayList<>();
                 while ((line = reader.readLine()) != null) {
-                    String[] temp = line.split("-");
+                    String[] temp = line.split("\\|");
                     arrayList.add(temp);
                     System.out.println(line);
                 }
@@ -159,11 +167,29 @@ public class HelloController {
         }
     }
 
+    public void showAll() throws IOException {
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader(".\\\\src\\\\main\\\\resources\\\\com\\\\example\\\\kalkulackaobedu\\\\All.bin"))) {
+            String line;
+            ArrayList<String[]> arrayList = new ArrayList<>();
+            while ((line = reader.readLine()) != null) {
+                String[] temp = line.split("\\|");
+                arrayList.add(temp);
+                System.out.println(line);
+            }
+            for (String[] strings : arrayList) {
+                database.put(strings[0], Integer.valueOf(strings[1]));
+                MakeRecord(strings[0], strings[1]);
+            }
+        }
+        System.out.println();
+    }
+
     public void saveDB() throws IOException {
         WriteDBtoFIle();
     }
 
-    public void OpenCalc(ActionEvent actionEvent) throws IOException {
+    public void OpenCalc() throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("calc.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 300, 120);

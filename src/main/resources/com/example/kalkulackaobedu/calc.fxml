@@ -9,15 +9,15 @@
          <VBox prefHeight="120.0" prefWidth="300.0" BorderPane.alignment="CENTER">
             <ToolBar prefHeight="40.0" prefWidth="200.0">
                <Label text="Cena" />
-               <TextField fx:id="cenaField" onKeyReleased="#StartedCena" prefHeight="26.0" prefWidth="254.0" promptText="158" />
+               <TextField fx:id="cenaField" onKeyReleased="#StartedCena" prefHeight="26.0" prefWidth="254.0" promptText="158" text="158" />
             </ToolBar>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
                <Label text="Dělitel" />
-               <TextField fx:id="dividerField" onKeyReleased="#StartedDivider" prefHeight="26.0" prefWidth="248.0" promptText="3" />
+               <TextField fx:id="dividerField" onKeyReleased="#StartedDivider" prefHeight="26.0" prefWidth="248.0" promptText="3" text="3" />
             </ToolBar>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
                <Label text="Výsledek" />
-               <TextField fx:id="finalCost" editable="false" prefHeight="26.0" prefWidth="235.0" promptText="53" />
+               <TextField fx:id="finalCost" editable="false" prefHeight="26.0" prefWidth="235.0" promptText="53" text="53" />
             </ToolBar>
          </VBox>
       </top>
