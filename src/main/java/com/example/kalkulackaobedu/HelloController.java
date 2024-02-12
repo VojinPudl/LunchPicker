@@ -141,9 +141,7 @@ public class HelloController implements Initializable {
                    }
                });
                 Button nullRecord = new Button("Vynulovat");
-                nullRecord.setOnAction(event -> {
-                    databaseFull.replace(databaseFull.keySet().toArray()[ident].toString(),0);
-                });
+                nullRecord.setOnAction(event -> databaseFull.replace(databaseFull.keySet().toArray()[ident].toString(),0));
                StaticMan.getItems().addAll(label, addToDB, nullRecord);
                fullDB.getChildren().add(StaticMan);
             }
