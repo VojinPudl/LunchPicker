@@ -21,7 +21,7 @@
                       <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#CloseApp" text="Close" />
                   </Menu>
                   <Menu mnemonicParsing="false" text="Edit">
-                      <MenuItem fx:id="removeDatabaseButton" mnemonicParsing="false" onAction="#DeleteAllRecords" text="Delete Database" />
+                      <MenuItem fx:id="removeDatabaseButton" mnemonicParsing="false" onAction="#DeleteAllRecords" text="Vynulovat DB" />
                   <MenuItem fx:id="servicePayment" mnemonicParsing="false" onAction="#AddServiceCost" text="Přidej Servisní poplatek" />
                   <MenuItem fx:id="calcButton" mnemonicParsing="false" onAction="#OpenCalc" text="Kalkulačka" />
                   </Menu>
@@ -29,12 +29,12 @@
               <TabPane prefHeight="521.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
                   <Tab fx:id="DatabaseFull" text="Database">
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                          <VBox fx:id="fullDB" prefHeight="494.0" prefWidth="800.0"/>
+                          <VBox fx:id="fullDB" prefHeight="494.0" prefWidth="800.0" />
                       </AnchorPane>
                   </Tab>
                   <Tab fx:id="TodayDB" text="Today">
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                          <VBox fx:id="ListOfRecords" prefHeight="493.0" prefWidth="800.0"/>
+                          <VBox fx:id="ListOfRecords" prefHeight="493.0" prefWidth="800.0" />
                       </AnchorPane>
                   </Tab>
               </TabPane>

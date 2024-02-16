@@ -53,7 +53,7 @@ public class HelloController implements Initializable {
 
     public Tab DatabaseFull;
     public Tab TodayDB;
-
+    private String line;
 
 
     public HelloController() {
@@ -73,7 +73,12 @@ public class HelloController implements Initializable {
                 if (databaseTemp.containsKey(nameField.getText())) {
                     databaseTemp.replace(nameField.getText(), arithmeticOperation.getNum()
                             + databaseTemp.get(nameField.getText()));
-                } else databaseTemp.put(nameField.getText(), arithmeticOperation.getNum());
+                    importIntoFullDB(nameField.getText(), arithmeticOperation.getNum()
+                            + databaseFull.get(nameField.getText()));
+                } else {
+                    databaseTemp.put(nameField.getText(), arithmeticOperation.getNum());
+                    importIntoFullDB(nameField.getText(), arithmeticOperation.getNum());
+                }
             }
         }
         RefreshDB();
@@ -97,12 +102,13 @@ public class HelloController implements Initializable {
 
         Button deleteRecord = new Button();
         deleteRecord.setOnAction(event -> {
+            importIntoFullDB(name, databaseFull.get(name) - databaseTemp.get(name));
             databaseTemp.remove(name, Integer.valueOf(money));
             RefreshDB();
         });
         AddMoneyButton.setText("Přidat");
         deleteRecord.setText("x");
-        Record.getItems().addAll(RecordContent, popis, AddMoneyButton, deleteRecord);
+        Record.getItems().addAll(RecordContent, AddMoneyButton, deleteRecord, popis);
         ListOfRecords.getChildren().add(Record);
     }
 
@@ -111,6 +117,24 @@ public class HelloController implements Initializable {
         PrintDate();
         for (int i = 0; i < databaseTemp.size(); i++) {
             MakeRecord(databaseTemp.keySet().toArray()[i].toString(), databaseTemp.values().toArray()[i].toString());
+        }
+    }
+
+    public void importIntoFullDB(String name, int cost) {
+        databaseFull.replace(name, cost);
+        File selectedFile = new File("src/main/resources/com/example/kalkulackaobedu/All.bin");
+        try {
+            FileWriter fileWriter = new FileWriter(selectedFile);
+            for (int i = 0; i < fullDB.getChildren().size(); i++) {
+                fileWriter.write(databaseFull.keySet().toArray()[i].toString() + "|"
+                        + databaseFull.values().toArray()[i].toString() + "\n");
+            }
+            fileWriter.close();
+            fullDB.getChildren().clear();
+            PrintFullDB();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -128,22 +152,27 @@ public class HelloController implements Initializable {
                 databaseFull.put(strings[0], Integer.valueOf(strings[1]));
             }
             for (int i = 0; i < databaseFull.size(); i++) {
-               StaticMan = new ToolBar();
-               Label label = new Label();
-               label.setText(databaseFull.keySet().toArray()[i]
-                       + " dluží " + databaseFull.values().toArray()[i] + " Kč");
-               int ident = i;
-               Button addToDB = new Button("Přidat do DB");
-               addToDB.setOnAction(event -> {
-                   if (!databaseTemp.containsKey(databaseFull.keySet().toArray()[ident].toString())) {
-                       databaseTemp.put(databaseFull.keySet().toArray()[ident].toString(), 0);
-                       RefreshDB();
-                   }
-               });
+                StaticMan = new ToolBar();
+                Label label = new Label();
+                label.setText(databaseFull.keySet().toArray()[i]
+                        + " dluží " + databaseFull.values().toArray()[i] + " Kč");
+                int ident = i;
+                Button addToDB = new Button("Přidat do DB");
+                addToDB.setOnAction(event -> {
+                    if (!databaseTemp.containsKey(databaseFull.keySet().toArray()[ident].toString())) {
+                        databaseTemp.put(databaseFull.keySet().toArray()[ident].toString(), 0);
+                        RefreshDB();
+                    }
+                });
                 Button nullRecord = new Button("Vynulovat");
-                nullRecord.setOnAction(event -> databaseFull.replace(databaseFull.keySet().toArray()[ident].toString(),0));
-               StaticMan.getItems().addAll(label, addToDB, nullRecord);
-               fullDB.getChildren().add(StaticMan);
+                nullRecord.setOnAction(event -> {
+                    importIntoFullDB(databaseFull.keySet().toArray()[ident].toString(), 0);
+                    databaseTemp.remove(databaseFull.keySet().toArray()[ident].toString());
+                    RefreshDB();
+                });
+
+                StaticMan.getItems().addAll(label, addToDB, nullRecord);
+                fullDB.getChildren().add(StaticMan);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -153,17 +182,30 @@ public class HelloController implements Initializable {
 
     public void WriteDBtoFIle() throws IOException {
         File file = new File(".",
-                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + ".bin");
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + ".txt");
         FileWriter fileWriter = new FileWriter(file);
-        for (int i = 0; i < ListOfRecords.getChildren().size(); i++) {
-            fileWriter.write(databaseTemp.keySet().toArray()[i].toString() + "|"
-                    + databaseTemp.values().toArray()[i].toString() + "\n");
+        fileWriter.write("-----------------------------------------------" + "\n");
+        fileWriter.write("Den: ");
+        fileWriter.write(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + "\n");
+        fileWriter.write("-----------------------------------------------" + "\n");
+        int celkem = 0;
+        for (int i = 0; i < databaseTemp.size(); i++) {
+            fileWriter.write("+ ");
+            fileWriter.write(databaseTemp.keySet().toArray()[i].toString() + " si objednal za "
+                    + databaseTemp.values().toArray()[i].toString() + " Kč" + "\n");
+            celkem += Integer.parseInt(databaseTemp.values().toArray()[i].toString());
         }
+        fileWriter.write("-----------------------------------------------" + "\n");
+        fileWriter.write("Celkem za " + celkem + " Kč" + "\n");
+        fileWriter.write("-----------------------------------------------" + "\n");
         fileWriter.close();
     }
 
     public void DeleteAllRecords() {
         databaseTemp = new HashMap<>();
+        for (int i = 0; i < databaseFull.size(); i++) {
+            importIntoFullDB(databaseFull.keySet().toArray()[i].toString(),0);
+        }
         RefreshDB();
         PrintDate();
     }
@@ -187,6 +229,10 @@ public class HelloController implements Initializable {
         serviceFee.setDatabaseRef(databaseTemp);
         serviceFee.ShowScene();
         RefreshDB();
+
+        //////////////////////////////////////////////
+        ///     Import servisniho poplatku
+        /////////////////////////////////////////////
     }
 
     public void EnterAddRecort(KeyEvent keyEvent) {
@@ -196,27 +242,16 @@ public class HelloController implements Initializable {
     }
 
     public void loadDB() throws IOException {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
-        fileChooser.setInitialDirectory(new File("."));
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Text Files", "*.bin"));
-        File selectedFile = fileChooser.showOpenDialog(new Stage());
-        if (selectedFile != null) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(selectedFile))) {
-                String line;
-                ArrayList<String[]> arrayList = new ArrayList<>();
-                while ((line = reader.readLine()) != null) {
-                    String[] temp = line.split("\\|");
-                    arrayList.add(temp);
-                    System.out.println(line);
-                }
-                for (String[] strings : arrayList) {
-                    databaseTemp.put(strings[0], Integer.valueOf(strings[1]));
-                    MakeRecord(strings[0], strings[1]);
-                }
-            }
-        }
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Preview.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        stage.setTitle("Kalkulačka");
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setAlwaysOnTop(true);
+        stage.showAndWait();
+
     }
 
     public void saveDB() throws IOException {
@@ -235,7 +270,7 @@ public class HelloController implements Initializable {
         stage.showAndWait();
     }
 
-    public void PrintDate(){
+    public void PrintDate() {
         ToolBar DateLine = new ToolBar();
         Label textDate = new Label();
         LocalDate date = LocalDate.now();

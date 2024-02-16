@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -16,6 +18,16 @@ public class ServiceFee {
     public static Stage stage;
 
     public static HashMap<String, Integer> databaseRef;
+
+    public int fee;
+
+    public int getFee() {
+        return fee;
+    }
+
+    public void setFee(int fee) {
+        this.fee = fee;
+    }
 
     public ServiceFee() {
         serviceFeeField = new TextField();
@@ -46,12 +58,18 @@ public class ServiceFee {
     public void addFeeToAll() {
         if (getDatabaseRef().isEmpty())
             return;
+        setFee((int) Math.floor((double) Integer.parseInt(serviceFeeField.getText()) / getDatabaseRef().size()));
         for (int i = 0; i < getDatabaseRef().size(); i++) {
             getDatabaseRef().replace((String) getDatabaseRef().keySet().toArray()[i],
-                    (int) ((Integer) getDatabaseRef().values().toArray()[i]
-                            + Math.floor((double) Integer.parseInt(serviceFeeField.getText())
-                            / getDatabaseRef().size())));
+                    getDatabaseRef().get((String) getDatabaseRef().keySet().toArray()[i]) + fee);
         }
         stage.close();
+    }
+
+    public void AddByKey(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (serviceFeeField.getText() != null)
+                addFeeToAll();
+        }
     }
 }
