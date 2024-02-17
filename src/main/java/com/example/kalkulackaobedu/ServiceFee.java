@@ -13,13 +13,26 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class ServiceFee {
+    public static Stage stage;
+    public static HashMap<String, Integer> databaseRef;
+    public static HashMap<String, Integer> databaseRefMain;
     public TextField serviceFeeField;
     public Button addFeeToAllButton;
-    public static Stage stage;
-
-    public static HashMap<String, Integer> databaseRef;
-
     public int fee;
+
+    public ServiceFee() {
+        serviceFeeField = new TextField();
+        addFeeToAllButton = new Button();
+
+    }
+
+    public static HashMap<String, Integer> getDatabaseRefMain() {
+        return databaseRefMain;
+    }
+
+    public static void setDatabaseRefMain(HashMap<String, Integer> databaseRefMain) {
+        ServiceFee.databaseRefMain = databaseRefMain;
+    }
 
     public int getFee() {
         return fee;
@@ -29,18 +42,12 @@ public class ServiceFee {
         this.fee = fee;
     }
 
-    public ServiceFee() {
-        serviceFeeField = new TextField();
-        addFeeToAllButton = new Button();
-
+    public HashMap<String, Integer> getDatabaseRef() {
+        return databaseRef;
     }
 
     public void setDatabaseRef(HashMap<String, Integer> databaseRef) {
         ServiceFee.databaseRef = databaseRef;
-    }
-
-    public HashMap<String, Integer> getDatabaseRef() {
-        return databaseRef;
     }
 
     public void ShowScene() throws IOException {
@@ -62,6 +69,8 @@ public class ServiceFee {
         for (int i = 0; i < getDatabaseRef().size(); i++) {
             getDatabaseRef().replace((String) getDatabaseRef().keySet().toArray()[i],
                     getDatabaseRef().get((String) getDatabaseRef().keySet().toArray()[i]) + fee);
+            getDatabaseRefMain().replace((String) getDatabaseRefMain().keySet().toArray()[i],
+                    getDatabaseRefMain().get((String) getDatabaseRefMain().keySet().toArray()[i]) + fee);
         }
         stage.close();
     }
