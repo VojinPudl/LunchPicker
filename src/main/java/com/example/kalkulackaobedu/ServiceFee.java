@@ -69,7 +69,7 @@ public class ServiceFee {
         for (int i = 0; i < getDatabaseRef().size(); i++) {
             getDatabaseRef().replace((String) getDatabaseRef().keySet().toArray()[i],
                     getDatabaseRef().get((String) getDatabaseRef().keySet().toArray()[i]) + fee);
-            getDatabaseRefMain().replace((String) getDatabaseRefMain().keySet().toArray()[i],
+            getDatabaseRefMain().replace((String) getDatabaseRef().keySet().toArray()[i],
                     getDatabaseRefMain().get((String) getDatabaseRefMain().keySet().toArray()[i]) + fee);
         }
         stage.close();

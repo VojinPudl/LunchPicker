@@ -131,7 +131,7 @@ public class HelloController implements Initializable {
 
     public void importIntoFullDB(String name, int cost) {
         databaseFull.replace(name, cost);
-        File selectedFile = new File("src/main/resources/com/example/kalkulackaobedu/All.bin");
+        File selectedFile = new File("src/main/resources/com/example/kalkulackaobedu/All.txt");
         try {
             FileWriter fileWriter = new FileWriter(selectedFile);
             for (int i = 0; i < fullDB.getChildren().size(); i++) {
@@ -147,7 +147,7 @@ public class HelloController implements Initializable {
     }
 
     public void PrintFullDB() {
-        File selectedFile = new File("src/main/resources/com/example/kalkulackaobedu/All.bin");
+        File selectedFile = new File("src/main/resources/com/example/kalkulackaobedu/All.txt");
         try (BufferedReader reader = new BufferedReader(new FileReader(selectedFile))) {
             String line;
             ArrayList<String[]> arrayList = new ArrayList<>();

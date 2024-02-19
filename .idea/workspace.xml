@@ -13,14 +13,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5f2545d-1b0b-466e-8fff-98f8dfe3c588" name="Changes" comment="New Things.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/All.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/KalkulackaObedu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/KalkulackaObedu_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/KalkulackaObedu_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_08__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_16__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu/KalkulackaObedu.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu/KalkulackaObedu.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ArithmeticOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ArithmeticOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Calc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Calc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu/KalkulackaObedu.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu_jar/KalkulackaObedu.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu_jar/kalkulacka.bat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Preview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/Preview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ServiceFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ServiceFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/All.bin" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -47,7 +52,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2XLYrd5X9UjvVUFsT3TzNLDe733" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,14 +65,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master-",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/sarik/IdeaProjects/LunchPicker/src/main/java/com/example/kalkulackaobedu",
-    "last_opened_file_path": "C:/Users/sarik/IdeaProjects/KalkulackaObedu/src/main/resources/com/example/kalkulackaobedu",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
+    "last_directory_selection": "C:/Users/sarik/IdeaProjects/KalkulackaObedu/src/main/java/com/example/kalkulackaobedu",
+    "last_opened_file_path": "C:/Users/sarik/IdeaProjects/KalkulackaObedu/src/main/resources/com/example/kalkulackaobedu/All.txt",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.37356323",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -73,7 +81,7 @@
       <recent name="C:\Users\sarik\IdeaProjects\KalkulackaObedu\src\main\resources\com\example\kalkulackaobedu" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JAR Application.Unnamed">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.kalkulackaobedu.HelloApplication" />
       <module name="KalkulackaObedu" />
@@ -87,6 +95,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unnamed" type="JarApplication" nameIsGenerated="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/KalkulackaObedu_jar/KalkulackaObedu.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\sarik\IdeaProjects\KalkulackaObedu" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJRE-21-Full" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="JAR Application.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
@@ -166,23 +185,7 @@
       <option name="project" value="LOCAL" />
       <updated>1707779489581</updated>
     </task>
-    <task id="LOCAL-00009" summary="New Things.">
-      <option name="closed" value="true" />
-      <created>1707779527653</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1707779527653</updated>
-    </task>
-    <task id="LOCAL-00010" summary="New Things.">
-      <option name="closed" value="true" />
-      <created>1708123597255</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1708123597255</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +200,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="New Things." />
     <option name="LAST_COMMIT_MESSAGE" value="New Things." />
   </component>
