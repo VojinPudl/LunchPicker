@@ -13,19 +13,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5f2545d-1b0b-466e-8fff-98f8dfe3c588" name="Changes" comment="New Things.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/All.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/KalkulackaObedu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/KalkulackaObedu_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/KalkulackaObedu_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_08__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_08_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_08__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_16_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_02_2024_22_16__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu/KalkulackaObedu.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu_jar/KalkulackaObedu.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/KalkulackaObedu_jar/kalkulacka.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ServiceFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kalkulackaobedu/ServiceFee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/All.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kalkulackaobedu/All.txt" beforeDir="false" afterPath="$PROJECT_DIR$/All.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +43,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;VojinPudl&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e7d5c47e-9f2c-4cda-af07-11b164855e22" />
+        <option name="url" value="https://github.com/VojinPudl/LunchPicker.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -80,8 +90,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sarik\IdeaProjects\KalkulackaObedu\src\main\resources\com\example\kalkulackaobedu" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sarik\IdeaProjects\KalkulackaObedu" />
+    </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Unnamed">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.kalkulackaobedu.HelloApplication" />
       <module name="KalkulackaObedu" />
@@ -185,7 +198,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707779489581</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="New Things.">
+      <option name="closed" value="true" />
+      <created>1708335744971</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708335744971</updated>
+    </task>
+    <task id="LOCAL-00010" summary="New Things.">
+      <option name="closed" value="true" />
+      <created>1708335760044</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708335760044</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

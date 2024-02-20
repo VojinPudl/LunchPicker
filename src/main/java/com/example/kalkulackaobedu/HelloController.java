@@ -89,9 +89,16 @@ public class HelloController implements Initializable {
         RecordContent = new Label();
         RecordContent.setText(name + " dluží " + money + " Kč");
         AddMoneyButton = new Button();
+
+        TextField cena = new TextField();
+        cena.promptTextProperty().set("150,-Kč");
+        cena.setPrefWidth(69);
+
         AddMoneyButton.setOnAction(event -> {
-            nameField.setText(name);
-            RefreshDB();
+            if (!cena.getText().isEmpty()){
+                nameField.setText(name);
+                RefreshDB();
+            }
         });
 
         TextField popis = new TextField();
@@ -117,7 +124,7 @@ public class HelloController implements Initializable {
         });
         AddMoneyButton.setText("Přidat");
         deleteRecord.setText("x");
-        Record.getItems().addAll(RecordContent, AddMoneyButton, deleteRecord, popis);
+        Record.getItems().addAll(RecordContent, cena, AddMoneyButton, deleteRecord, popis);
         ListOfRecords.getChildren().add(Record);
     }
 
@@ -131,7 +138,7 @@ public class HelloController implements Initializable {
 
     public void importIntoFullDB(String name, int cost) {
         databaseFull.replace(name, cost);
-        File selectedFile = new File("src/main/resources/com/example/kalkulackaobedu/All.txt");
+        File selectedFile = new File("All.txt");
         try {
             FileWriter fileWriter = new FileWriter(selectedFile);
             for (int i = 0; i < fullDB.getChildren().size(); i++) {
@@ -147,7 +154,7 @@ public class HelloController implements Initializable {
     }
 
     public void PrintFullDB() {
-        File selectedFile = new File("src/main/resources/com/example/kalkulackaobedu/All.txt");
+        File selectedFile = new File("All.txt");
         try (BufferedReader reader = new BufferedReader(new FileReader(selectedFile))) {
             String line;
             ArrayList<String[]> arrayList = new ArrayList<>();
@@ -227,7 +234,7 @@ public class HelloController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Close-Sure.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 200, 100);
         stage.setTitle("Kalkulačka");
-        stage.initStyle(StageStyle.UTILITY);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setAlwaysOnTop(true);
@@ -262,7 +269,7 @@ public class HelloController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Preview.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
         stage.setTitle("Kalkulačka");
-        stage.initStyle(StageStyle.UTILITY);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setAlwaysOnTop(true);
@@ -278,7 +285,7 @@ public class HelloController implements Initializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("calc.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 300, 120);
-        stage.initStyle(StageStyle.UTILITY);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setTitle("Kalkulačka");
         stage.setScene(scene);
         stage.setResizable(false);

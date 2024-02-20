@@ -54,7 +54,7 @@ public class ServiceFee {
         stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Service-fee.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 200, 50);
-        stage.initStyle(StageStyle.UTILITY);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setTitle("Kalkulačka");
         stage.setScene(scene);
         stage.setResizable(false);
